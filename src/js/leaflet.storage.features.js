@@ -602,9 +602,9 @@ L.Storage.PathMixin = {
         this._setStyleOptions();
         L.Polyline.prototype._updateStyle.call(this);
         if (!this.options.clickable) {
-            this._path.setAttribute('pointer-events', 'stroke');
+            if (this._path ) this._path.setAttribute('pointer-events', 'stroke');
         } else {
-            this._path.removeAttribute('pointer-events');
+            if (this._path ) this._path.removeAttribute('pointer-events');
         }
     },
 
